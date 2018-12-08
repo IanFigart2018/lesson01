@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+	<style type="text/css">
+	body {
+		width: 900px;
+		margin: 150px;
+		text-align: center;
+		font-size: 150px;
+	}
+	div {font-size: 88px;}
+	</style>
+</head>
+<body>
+<img src="jack.jpeg" width="50%">
+<div>this clock is made by Ian. <br/>this is my dog, Jack.</div>
+<div id="clock"></div>
+<script type="text/javascript">
+	setInterval(displayclock, 1000)
+	function displayclock () {
+		var time = new Date();
+		var hrs = time.getHours();
+		var min= time.getMinutes();
+		var sec = time.getSeconds();
+
+		if (hrs > 12) {
+			hrs = hrs - 12;
+		}
+
+		if (hrs == 0) {
+			hrs = 12;
+		}
+
+		document.getElementById('clock').innerHTML = hrs + ":" + min + ':' +sec;
+
+	}
+
+
+
+</script>
+</body>
+</html>
